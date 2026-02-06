@@ -97,16 +97,6 @@ npm run build && npm start
 - [Learn Next.js](https://nextjs.org/learn)
 - [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 
-## 📝 Keywords
-
-`nextjs` · `react` · `typescript` · `api-routes` · `transport` · `sms-ticket` · `fake-ticket-generator` · `educational-project` · `app-router` · `discord-webhook` · `setram` · `le-mans` · `french-transit`
-
----
-
-**Description for the repository:**
-
-> 🚇 Fake public transport SMS ticket generator built with Next.js 16, React 19 & TypeScript. Educational project exploring API routes, App Router, and webhook integrations.
-
 ---
 
 > This project is strictly for educational and learning purposes.
