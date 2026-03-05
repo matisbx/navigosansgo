@@ -6,8 +6,8 @@ const formatDateParis = (d: Date) => {
     day: d.toLocaleDateString('fr-FR', { ...options, day: '2-digit' }).slice(0, 2),
     month: d.toLocaleDateString('fr-FR', { ...options, month: '2-digit' }).slice(0, 2),
     year: d.toLocaleDateString('fr-FR', { ...options, year: '2-digit' }),
-    hours: d.toLocaleTimeString('fr-FR', { ...options, hour: '2-digit', hour12: false }).slice(0, 2),
-    minutes: d.toLocaleTimeString('fr-FR', { ...options, minute: '2-digit' }).slice(-2),
+    hours: d.toLocaleTimeString('fr-FR', { ...options, hour: '2-digit', hour12: false }).replace(/[^0-9]/g, '').padStart(2, '0'),
+    minutes: d.toLocaleTimeString('fr-FR', { ...options, minute: '2-digit' }).replace(/[^0-9]/g, '').padStart(2, '0'),
   };
 };
 
