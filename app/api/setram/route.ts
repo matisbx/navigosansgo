@@ -25,7 +25,16 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const message = searchParams.get('content')?.toLowerCase() ?? '';
   
-  const now = new Date();
+  // Parse timestamp if provided, otherwise use current time
+  let now = new Date();
+  const dateParam = searchParams.get('date');
+  if (dateParam) {
+    const timestamp = parseInt(dateParam, 10);
+    if (!isNaN(timestamp)) {
+      now = new Date(timestamp);
+    }
+  }
+  
   const { day, month, year, hours, minutes } = formatDateParis(now);
   const code = generateCode();
 

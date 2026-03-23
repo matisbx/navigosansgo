@@ -90,6 +90,7 @@ npm run build && npm start
 | `/api/access` | POST | Submit an access request |
 | `/api/setram?content=1h` | GET | Generate a 1-hour Setram ticket |
 | `/api/setram?content=24h` | GET | Generate a 24-hour Setram ticket |
+| `/api/setram?content=1h&date={timestamp}` | GET | Generate a ticket with a specific date/time (timestamp in ms) |
 
 ## 📖 Useful Resources
 

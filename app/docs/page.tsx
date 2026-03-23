@@ -39,6 +39,11 @@ export default function Docs() {
             <td style={{ padding: "10px 0", color: "#888" }}>string</td>
             <td style={{ padding: "10px 0", color: "#888" }}>Type de ticket (ex: &quot;1h&quot;, &quot;24h&quot;)</td>
           </tr>
+          <tr style={{ borderBottom: "1px solid #222" }}>
+            <td style={{ padding: "10px 0" }}>date</td>
+            <td style={{ padding: "10px 0", color: "#888" }}>number (optional)</td>
+            <td style={{ padding: "10px 0", color: "#888" }}>Timestamp en millisecondes pour définir une date/heure spécifique. Si absent, utilise l&apos;heure actuelle.</td>
+          </tr>
         </tbody>
       </table>
 
@@ -48,6 +53,11 @@ export default function Docs() {
 
       <pre style={{ background: "#111", padding: 15, marginTop: 10, overflow: "auto" }}>
 GET /api/setram?content=1h
+      </pre>
+
+      <p style={{ color: "#888", marginTop: 20 }}>Avec un timestamp spécifique :</p>
+      <pre style={{ background: "#111", padding: 15, marginTop: 10, overflow: "auto" }}>
+GET /api/setram?content=1h&date=1708635120000
       </pre>
 
       <h4 style={{ marginTop: 20 }}>Exemple de réponse (Setram)</h4>
