@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const formatDateParis = (d: Date) => {
   const options: Intl.DateTimeFormatOptions = { timeZone: 'Europe/Paris' };
+  const timeStr = d.toLocaleTimeString('fr-FR', { ...options, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+  const [hours, minutes] = timeStr.split(':');
+  
   return {
     day: d.toLocaleDateString('fr-FR', { ...options, day: '2-digit' }).slice(0, 2),
     month: d.toLocaleDateString('fr-FR', { ...options, month: '2-digit' }).slice(0, 2),
     year: d.toLocaleDateString('fr-FR', { ...options, year: '2-digit' }),
-    hours: d.toLocaleTimeString('fr-FR', { ...options, hour: '2-digit', hour12: false }).replace(/[^0-9]/g, '').padStart(2, '0'),
-    minutes: d.toLocaleTimeString('fr-FR', { ...options, minute: '2-digit' }).replace(/[^0-9]/g, '').padStart(2, '0'),
+    hours: hours.padStart(2, '0'),
+    minutes: minutes.padStart(2, '0'),
   };
 };
 
